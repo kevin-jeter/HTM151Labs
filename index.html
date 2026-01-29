@@ -149,7 +149,7 @@
       <select id="labFilter" onchange="filterLabs()">
         <option value="">----Select----</option>
         <option value="User Guide">User Guide</option>
-        <option value="Lab 1: Orientation and Navigation">Lab 1: Orientation and Navigation</option>
+        <option value="Lab 1: Technician Schedules and Rates">Lab 1: Technician Schedules and Rates</option>
         <option value="Lab 2: Clinical Device Verification">Lab 2: Clinical Device Verification</option>
         <option value="Lab 3: Preventive Maintenance Definitions">Lab 3: Preventive Maintenance Definitions</option>
       </select>
@@ -184,10 +184,108 @@
     </section>
 
     
-    <section class="lab-section" data-lab="Lab 1: Orientation and Navigation">
-      <h2>Lab 1: Orientation and Navigation</h2>
-
-    </section>
+    <section class="lab-section" data-lab="Lab 1: Technician Schedules and Rates">
+      <h2>Lab 1: Technician Schedules and Rates</h2>
+      <p>In this lab, you will learn how to navigate the Nuvolo system and understand technician schedules and rates.</p>
+      <h3>Part 1: User Attributes</h3>
+        <li>In the "All" section, search for "User Attributes" and select it.
+          <img src="Lab-Images/lab1-9.png" alt="User Attributes Search Result" style="max-width: 100%;">
+        </li>
+        <li>Search and click on your Name via the Name Search bar
+            <img src="Lab-Images/lab1-10.png" alt="User Attributes Name Search" style="max-width: 100%;">
+        </li>
+        <li>Select your Name and review the following data fields for accuracy:
+            <ul>
+                <li>Facility: The facility you report to on an organizational chart</li>
+                <li>Duty Station: The facility you are performing work actions at currently</li>
+                <li>HTM User. Make sure this box is checked to ensure you have access to Nuvolo</li>
+                <li>HTM Manager. Make sure this box is checked to ensure you have manager privileges in Nuvolo</li>
+                <li>HTM Primary Role. Your user role, as applicable</li>
+            </ul>
+            <img src="Lab-Images/lab1-11.png" alt="User Attributes Data Fields" style="max-width: 100%;">
+        </li>
+        <li>Once confirmed, select "Update"</li>
+        <li>Repeat this steps for at least 2 additional technicians at your site</li>
+      
+        <h3>Part 2: Technician Schedules</h3>
+        <li>In the "All," section, search for "Technician Schedules" and select it.
+          <img src="Lab-Images/lab1-1.png" alt="Technician Schedules Search Result" style="max-width: 100%;">
+        </li>
+        <li>We're going to create a New Technician Schedule. Select the "New" button.
+          <img src="Lab-Images/lab1-2.png" alt="New Technician Schedule Button" style="max-width: 100%;">
+        </li>
+        <li>Fill out the following fields on the form using your OWN name.
+          <ul>
+            <li><strong>Name:</strong> Your Full Name - HTM151 Lab</li>
+            <li><strong>Technician:</strong> Your Full Name (Use the magnifying glass to search)</li>
+            <li><strong>Schedule Type:</strong> Shift</li>
+            <li><strong>Description:</strong> HTM151 Technician Schedule Example</li>
+          </ul>
+          <img src="Lab-Images/lab1-3.png" alt="Technician Schedule Form" style="max-width: 100%;">
+        </li>
+        <li>Let's find your schedule! In the "Name" search bar, enter "*" and then your Last name
+            <img src="Lab-Images/lab1-4.png" alt="Search Technician Schedule" style="max-width: 100%;">
+        </li>
+        <li> Select your Technician Schedule from the list and click on "Load Related Lists at the bottom of the page."
+            <img src="Lab-Images/lab1-5.png" alt="Select Technician Schedule" style="max-width: 100%;">
+        </li>
+        <li>Let's create a new Schedule Entrie. Click on "New" in the Schedule Entries related list.
+            <img src="Lab-Images/lab1-6.png" alt="New Schedule Entry Button" style="max-width: 100%;">
+        </li>
+        <li>Fill out the following fields on the Schedule Entry form:
+          <ul>
+            <li><strong>Name:</strong> Your Name Monday-Friday</li>
+            <li><strong>Type:</strong> --None-- </li>
+            <li><strong>Show as:</strong> Busy</li>
+            <li><strong>When:</strong> Today's Date and Your Work Hours</li>
+            <li><strong>Repeats:</strong> Every Weekday</li>
+            <li><strong>Repeat Until:</strong> Leave Blank</li>
+            <li><strong>Type:</strong> Leave Blank</li>
+          </ul>
+          <img src="Lab-Images/lab1-7.png" alt="Schedule Entry Form" style="max-width: 100%;">
+        </li>
+        <li>Submit the Schedule Entry. You'll see the schedule entry appear in the related list.
+            <img src="Lab-Images/lab1-8.png" alt="Schedule Entry in Related List" style="max-width: 100%;">
+        </li>
+    <h3>Part 3: Rates</h3>
+    <p>Let’s make sure you know how to accurately view and update your technician’s pay rates within Nuvolo. This ensures proper record keeping to see how much labor cost is being put into specific devices. It will help make decisions on device maintenance and upkeep versus device replacement.</p>
+        <li>in the "All," section, search for "Internal Employee Rates" and select it.
+          <img src="Lab-Images/lab1-12.png" alt="Technician Rates Search Result" style="max-width: 100%;">
+        </li>
+        <li>Let's create a new Employee Rate. Select the New button.
+            <img src="Lab-Images/lab1-13.png" alt="New Employee Rate Button" style="max-width: 100%;">
+        </li>
+        <li>We're going to create a new employee rate. Fill out the following fields on the Employee Rate form:
+            <ul>
+                <li><strong>Employee::</strong> Kevin Jeter</li>
+                <li><strong>Position Entry Date:</strong> Today's Date</li>
+                <li><strong>Facility:</strong> Your Facility</li>
+            </ul>
+            <img src="Lab-Images/lab1-14.png" alt="Employee Rate Form" style="max-width: 100%;">
+        </li>
+        <li>Search and find the employee rate you just created using the Employee search (Hint: type *Jeter)
+            <img src="Lab-Images/lab1-15.png" alt="Search Employee Rate" style="max-width: 100%;">
+        </li>
+        <li>Open the entry by selecting the blue hyperlink under "Yearly." We need to calculate Kevin's Labor rate. To do so, follow these steps:
+            <ul>
+                <li>Annual Salary: $40,000</li>
+                <li>Divide this by 2080: $40,000 / 2080 = $19.23</li>
+                <li>Enter $19.23 into the "Labor Rate" field</li>
+            </ul>
+            <img src="Lab-Images/lab1-16.png" alt="Employee Rate Labor Rate Field" style="max-width: 100%;">
+        </li>
+        <li>Finally, let's fill out the rest of Kevin' Internal Rate Information. Fill out the following fields:
+            <ul>
+                <li>Pay Plan: GS</li>
+                <li>Classification Series: Enter the job series. (0858 is for BME)</li>
+                <li>Grade: Enter Pay Grade</li>
+                <li>Step: Enter current pay grade step</li>
+                <li>Role: Enter HTM Role</li>
+            </ul>
+            <img src="Lab-Images/lab1-17.png" alt="Employee Rate Additional Fields" style="max-width: 100%;">
+        </li>
+        <li>Select "Update" and you've completed updating the employee rate.</li>
+</section>
 
     <section class="lab-section" data-lab="Lab 2: Clinical Device Verification">
       <h2>Lab 2: Clinical Device Verification and Work Order Assignment</h2>
