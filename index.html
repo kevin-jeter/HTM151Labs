@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTM150: Nuvolo for Technicians – Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #005ea2;
+      --accent: #cce5ff;
+      --gray-border: #dee2e6;
+    }
+
+    body.light {
+      --bg-light: #ffffff;
+      --text-dark: #000000;
+      --card-bg: #ffffff;
+      --header-bg: var(--primary);
+      --input-bg: #f4f4f4;
+      --table-head-bg: #f0f0f0;
+      --table-alt-row-bg: #f9f9f9;
+      --image-border: #808080;
+      --gray-border: #adb5bd;
+    }
+
+    body.dark {
+      --bg-light: #1c1e21;
+      --text-dark: #e9ecef;
+      --card-bg: #2c2f33;
+      --header-bg: #003d7a;
+      --input-bg: #333840;
+      --table-head-bg: #3a3d41;
+      --table-alt-row-bg: #2a2d31;
+      --image-border: #444;
+      h1, h2, h3 {
+        color: var(--accent);
+      }
+      .callout {
+        border-left-color: var(--accent);
+      }
+      .theme-switch input:checked + .slider {
+        background-color: var(--accent);
+      }
+      input::placeholder,
+      select::placeholder {
+        color: #cccccc;
+      }
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      background: var(--bg-light);
+      padding: 20px;
+      color: var(--text-dark);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    h1, h2, h3 { color: var(--primary); margin-bottom: 10px; }
+    h1 { font-size: 24pt; }
+    h2 { font-size: 18pt; }
+    h3 { font-size: 14pt; }
+
+    .header, .footer {
+      background-color: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      transition: background-color 0.3s ease;
+    }
+    .header h1 {
+       margin: 0;
+      color: white;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 10px;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 10px;
+      transition: none;
+    }
+    .card:hover { box-shadow: none; transform: none; }
+
+    .lab-section {
+      display: none;
+      background: var(--card-bg);
+      border-left: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 10px;
+      margin-bottom: 10px;
+      animation: none;
+      transition: none;
+    }
+    .lab-section.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .styled-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12pt; background-color: var(--card-bg); color: var(--text-dark); }
+    .styled-table th, .styled-table td { border: 1px solid var(--gray-border); padding: 10px; vertical-align: top; text-align: left; }
+    .styled-table thead th { background-color: var(--table-head-bg); }
+    .styled-table tbody tr:nth-child(even) { background-color: var(--table-alt-row-bg); }
+
+    img { display: block; margin-top: 10px; max-width: 40%; height: auto; border: 1px solid var(--image-border); border-radius: 4px; }
+
+    .filter-bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    .theme-switch { display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+    .theme-switch input { display: none; }
+    .theme-switch .slider { width: 40px; height: 20px; background-color: #ccc; border-radius: 20px; position: relative; transition: background-color 0.3s ease; }
+    .theme-switch .slider::before { content: ""; position: absolute; width: 16px; height: 16px; top: 2px; left: 2px; background-color: white; border-radius: 50%; transition: transform 0.3s ease; }
+    .theme-switch input:checked + .slider { background-color: var(--primary); }
+    .theme-switch input:checked + .slider::before { transform: translateX(20px); }
+    .switch-label { font-size: 0.9rem; color: var(--text-dark); }
+
+    .toggle-button { background-color: var(--primary); color: white; border: none; padding: 8px 12px; border-radius: 4px; font-size: 0.95rem; cursor: pointer; margin: 10px 0; transition: background-color 0.3s ease; }
+    .toggle-button:hover { background-color: #003d7a; }
+
+    .callout { border-left: 4px solid var(--primary); background: var(--table-alt-row-bg); padding: 10px 12px; border-radius: 6px; margin: 10px 0; }
+
+    .container { max-width: none; margin: 0; }
+
+        input[type="text"],
+    select {
+      background-color: var(--input-bg);
+      color: var(--text-dark);
+      border: 1px solid var(--gray-border);
+      padding: 8px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="light">
+  <header class="header">
+    <h1>HTM150: Nuvolo for Technicians – Labs</h1>
+  </header>
+
+  <section class="card filter-bar">
+    <div>
+      <strong>Select Lab:</strong>
+      <select id="labFilter" onchange="filterLabs()">
+        <option value="">----Select----</option>
+        <option value="User Guide">User Guide</option>
+        <option value="Lab 1: Orientation and Navigation">Lab 1: Orientation and Navigation</option>
+        <option value="Lab 2: Clinical Device Verification">Lab 2: Clinical Device Verification</option>
+      </select>
+    </div>
+
+    <label class="theme-switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+      <span class="switch-label">Dark Mode</span>
+    </label>
+  </section>
+
+  <main class="container">
+    <section class="lab-section active" data-lab="User Guide">
+      <h2>User Guide</h2>
+      <p>Welcome to the HTM151: Nuvolo for Managers Labs! This guide is designed to help you navigate through the various labs included in this course. Each lab focuses on a specific aspect of using Nuvolo, providing hands-on experience and practical knowledge.</p>
+      <h3>Getting Started</h3>
+      <ol>
+        <li><strong>Access Nuvolo Development Environment:</strong> Use the DEV environment for all labs. Login via <a href="https://vaoittest.servicenowservices.com">https://vaoittest.servicenowservices.com</a> with your VA.gov account.</li>
+        <li><strong>Navigate This Guide:</strong> Use the dropdown menu above to select a specific lab. All sections include step-by-step instructions, screenshots, and interactive elements like input fields for answers.</li>
+        <li><strong>Theme Toggle:</strong> Switch between light and dark mode using the toggle in the top right for better readability.</li>
+      </ol>
+      <h3>Tips for Success</h3>
+      <ul>
+        <li><strong>Explore Freely:</strong> Don't hesitate to click around Nuvolo—use the "History" tab to backtrack if needed. Avoid using your browser's back button, as it may not work well with Nuvolo.</li>
+        <li><strong>Document Your Work:</strong> Many labs include input fields for recording answers (e.g., work order numbers). Use these to track your progress and share with instructors.</li>
+        <li><strong>Troubleshooting:</strong> If you encounter issues, you're not alone! Ask your instructor(s) for help and you'll be helping out your peers too!</li>
+        <li><strong>Practice Hypotheticals:</strong> Labs encourage creating hypothetical work orders and assets to build confidence without real-world consequences.</li>
+      </ul>
+      <p>If you have questions, reach out to your instructor or refer to the course materials. Happy learning and mastering Nuvolo!</p>
+      <p>Happy learning!</p>
+    </section>
+
+    
+    <section class="lab-section" data-lab="Lab 1: Orientation and Navigation">
+      <h2>Lab 1: Orientation and Navigation</h2>
+
+    </section>
+
+    <section class="lab-section" data-lab="Lab 2: Clinical Device Verification">
+      <h2>Lab 2: Clinical Device Verification and Work Order Assignment</h2>
+      <h3>Part 1: Navigation and Primary Data Fields</h3>
+        <li>In the "All," section, search for "Unverified Devices" and select it.
+          <img src="Lab-Images/lab2-1.png" alt="Unverified Devices Search Result" style="max-width: 100%;">
+        </li>
+        <li>Click on the first Unverified Device to view its details.
+          <img src="Lab-Images/lab2-2.png" alt="Unverified Device Details" style="max-width: 100%;">
+        </li>
+        <li>Review the primary data fields on the device details page. Based on the information, answer the following questions:</li>
+        <ol type="i">
+          <li>What is the device's serial number?<input type="text" name="q1" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is the device HTM Supported or Non-HTM Supported?<input type="text" name="q2" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the Warranty Expiration Date?<input type="text" name="q3" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the PM Support Group?<input type="text" name="q4" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What's the total Cost of Ownership?<input type="text" name="q5" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>When was the last activity on this device?<input type="text" name="q6" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is this device Cerner Compatible?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+        </ol>
+        </li>
+        <li>Before verifying this device, let's find out how to automatically assign groups for PM and CM Support on this device. Select the "Resources" tab.
+            <img src="Lab-Images/lab2-8.png" alt="Resources Tab" style="max-width: 100%;">
+        </li>
+        <li>Let's update the PM Support Group. Select the "Eyeglass" icon next to the PM Support Group field.
+          <img src="Lab-Images/lab2-9.png" alt="Eyeglass Icon" style="max-width: 100%;">
+        </li>
+        <li>In the pop-up window, select one of the groups to give them automatic assignment to this device.
+            <img src="Lab-Images/lab2-10.png" alt="Select Group Pop-up" style="max-width: 100%;">
+        </li>
+        <li>Finally, let's verify this device. Select the "Verified" button and select Save.
+          <img src="Lab-Images/lab2-3.png" alt="Verify Device Button" style="max-width: 100%;">
+        </li>
+
+      <h3>Part 2: Work Order Assignment</h3>
+        <p>We just used Automatic Assignment in the last lab, but how do we manage our groups and create new ones if we need to?</p>
+        <li>In the "All," section, search for "Groups" and select it (Hint: It's the one under "Self Service")
+          <img src="Lab-Images/lab2-4.png" alt="Groups Search Result" style="max-width: 100%;">
+        </li>
+        <li>In the list, search for "HTM" followed by the HTM Program TLA (in this example, we use ABQ. Yours will be different!) and select Enter
+          <img src="Lab-Images/lab2-5.png" alt="HTM Group Search Result" style="max-width: 100%;">
+        </li>
+        <li>Select one of the groups to update. 
+          <img src="Lab-Images/lab2-6.png" alt="Select HTM Group" style="max-width: 100%;">
+        </li>
+        <li>At the bottom of the page, you can select "Load Related Lists" to view additional details like Roles, Group Members, Groups, Skills, etc.
+          <img src="Lab-Images/lab2-7.png" alt="Load Related Lists" style="max-width: 100%;">
+        </li>
+        <li>Review the data fields and answer the following questions: </li>
+        <ol type="i">
+          <li>What is the purpose/description of this group?<input type="text" name="q8" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>How many Group Members are in this group?<input type="text" name="q9" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>How many different Roles are assigned to this group?<input type="text" name="q10" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is the group Active?<input type="text" name="q11" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the Group email?<input type="text" name="q12" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Does it have a group parent? If so, what is it?<input type="text" name="q13" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+        </ol>
+        <li>Challenge: Add a member to the group! (Hint: Look for the "Edit" button in a related list)</li>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 HTM150 Lab Materials</p>
+  </footer>
+
+  <script>
+    function filterLabs() {
+      const select = document.getElementById('labFilter');
+      const value = select.value;
+      const sections = document.querySelectorAll('.lab-section');
+      sections.forEach(section => {
+        section.classList.toggle('active', section.dataset.lab === value || value === '');
+      });
+    }
+
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark', themeToggle.checked);
+      document.body.classList.toggle('light', !themeToggle.checked);
+    });
+  </script>
+</body>
+
+</html>
