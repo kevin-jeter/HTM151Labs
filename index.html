@@ -349,12 +349,13 @@
         <li>Review the primary data fields on the device details page. Based on the information, answer the following questions:</li>
         <ol type="i">
           <li>What is the device's serial number?<input type="text" name="q1" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is the device HTM Supported or Non-HTM Supported?<input type="text" name="q2" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the Warranty Expiration Date?<input type="text" name="q3" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the PM Support Group?<input type="text" name="q4" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What's the total Cost of Ownership?<input type="text" name="q5" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>When was the last activity on this device?<input type="text" name="q6" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is this device Cerner Compatible?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the Operational Status of this device? <input type="text" name="q2" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is there a Backup Available?<input type="text" name="q3" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is this device a Loaner? <input type="text" name="q4" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the Warranty Expiration date? <input type="text" name="q5" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What is the PM Support Group?<input type="text" name="q6" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>What was the last activity on this device?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+          <li>Is this device Cerner compatible?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
         </ol>
         </li>
         <li>Before verifying this device, let's find out how to automatically assign groups for PM and CM Support on this device. Select the "Resources" tab.
@@ -369,6 +370,18 @@
         <li>Finally, let's verify this device. Select the "Verified" button and select Save.
           <img src="Lab-Images/lab2-3.png" alt="Verify Device Button" style="max-width: 100%;">
         </li>
+        <li>What time does the Daily Device Feed run every day?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> 2 AM EST </p>
+        <li>Where is device data pulled from to the daily device feed?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Device data is pulled from AEMS/MERS (VistA), Maximo, NMDD </p>
+        <li>Where can you see the Daily Device Feed update history within a device record? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Under the Activities tab at the bottom of the Clinical Devices record </p>
       </ol>
       <h3>Part 2: Work Order Assignment</h3>
         <p>We just used Automatic Assignment in the last lab, but how do we manage our groups and create new ones if we need to?</p>
@@ -379,7 +392,7 @@
         <li>In the list, search for "HTM" followed by the HTM Program TLA (in this example, we use ABQ. Yours will be different!) and select Enter
           <img src="Lab-Images/lab2-5.png" alt="HTM Group Search Result" style="max-width: 100%;">
         </li>
-        <li>Select one of the groups to update. 
+        <li>Select one of the groups. 
           <img src="Lab-Images/lab2-6.png" alt="Select HTM Group" style="max-width: 100%;">
         </li>
         <li>At the bottom of the page, you can select "Load Related Lists" to view additional details like Roles, Group Members, Groups, Skills, etc.
@@ -392,15 +405,30 @@
           <li>How many different Roles are assigned to this group?<input type="text" name="q10" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
           <li>Is the group Active?<input type="text" name="q11" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
           <li>What is the Group email?<input type="text" name="q12" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Does it have a group parent? If so, what is it?<input type="text" name="q13" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
         </ol>
-        <li>Challenge: Add a member to the group! (Hint: Look for the "Edit" button in a related list)</li>
+        <li>What is the role of the Group Manager in a Support Group? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Typically the HTM Manager or department chief responsible for overseeing the group’s settings and performance</p>
+        <li>What function does the Default Assignee serve in a Support Group? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> It determines the automatically assigned technician if no specific Supported By person is listed on the device</p>
+        <li>Why is accurate group membership critical for automatic assignment?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Nuvolo uses Support Group membership to route CM, PM, Cyber, and Other work orders to the correct personnel</p>
+        <li>Why should you check your technician’s schedule before relying on automatic assignment? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Because automatic assignment only works when a technician has an active schedule; otherwise, work orders default to the group instead.</p>
         </ol>
     </section>
 
 <section class="lab-section" data-lab="Lab 3: Preventive Maintenance Definitions">
       <h2>Lab 3: Preventive Maintenance Definitions</h2>
         <p>A key aspect of PMs is PM definitions. This is how PMs will be auto-generated within Nuvolo. For this lab, we'll focus on creating a PM definition for "CAPNOMETERS"</p>
+        <h3>Part 1: Maintenance Definitions and Automatic Creation</h3>
         <ol>
         <li>In the "All" filter navigator, search for "Maintenance Definitions" and select it.
           <img src="Lab-Images/lab3-1.png" alt="Preventive Maintenance Definitions Search Result" style="max-width: 100%;">
@@ -438,12 +466,57 @@
             </li>
            </ul> 
         </li>
-        <li>Repeat these steps to add an additional PM Definition for a model at your site.
-          <ul>
-            <li>What Name did you choose? <input type="text" name="q14" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-            <li>What filters did you use? <input type="text" name="q15" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          </ul>
+        <li>Select your newly created definition by clicking on the name
+          <img src="Lab-Images/lab3-8.png" alt="" style="width: 100%;"
         </li>
+        <li>Confirm the PM Definition is activated. If it isn't, click "Activate" in the top right corner.
+          <img src="Lab-Images/lab3-9.png" alt="" style="width: 100%;"
+        </li>
+        <li>Why won’t Clinical Scheduled Maintenances appear before clicking Activate? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Can only be generated only after the definition is activated.</p>
+        <li>Where do you see the number of matching assets for your conditions? </strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> In the Asset Conditions in the link: No. of records matching the conditions</p>
+        <li>What are the two related lists you should verify after activation?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Maintenance Instance and Upcoming Scheduled Maintenance in Load Related List </p>
+        </ol>
+        <h3>Part 2: Generate Now (Ad Hoc Generation)</h3>
+        <p>If a new asset/model has no existing definition, set Generation Type to Generate Now to create a work order</p>
+        <ol>
+          <li>Renavigate to the "Maintenance Definitions" main page.</li>
+          <li>Select "New" to create a new PM Definition.
+            <img src="Lab-Images/lab3-2.png" alt="New PM Definition Button" style="max-width: 100%;">
+        </li>
+          <li>Fill out the following fields:
+          <ul>
+            <li><strong>Name:</strong> VISN 20 - WWW - CAPNOMETERS - CAPNOCHECK II</li>
+            <ul>
+              <li><strong>Note:</strong> Replace VISN with your correct VISN and "WWW" with your three-letter HTM Program TLA</li>
+            </ul>
+            <li><strong>VISN:</strong> Choose your VISN</li>
+            <li><strong>Facility:</strong> Remove this Filter for our Labs. You'll want this when creating them normally though!</li>
+            <li><strong>Model Name:</strong> CAPNOCHECK II</li>
+            <li><strong>Status:</strong> In Use, Loaned Out, Out of Service</li>
+          </ul>
+          <img src="Lab-Images/lab3-3.png" alt="PM Definition Form" style="max-width: 100%;">
+        </li>
+        <li>In the below section, select "Generate Now" in Generation Type. Note that Start Date is greyed out when it's selected.
+          <img src="Lab-Images/lab3-10.png" alt="PM Definition Form" style="max-width: 100%;">
+        </li>
+        <li>Select "Save" or "Submit" to complete the PM Definition creation.</li>
+        <li>Does Generate Now create PM orders immediately?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> No – it is generated overnight.</p>
+        <li>When should you switch back to Recurring after Generate Now?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> After initial PM work orders are generated (so the definition resumes scheduled recurring generation)</p>
         </ol>
     </section>
 
