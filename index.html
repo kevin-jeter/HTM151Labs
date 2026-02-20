@@ -126,6 +126,8 @@
 
     .container { max-width: none; margin: 0; }
 
+    .answer { display: none; margin-top: 10px; padding: 10px; background-color: var(--table-alt-row-bg); border-radius: 4px; }
+
         input[type="text"],
     select {
       background-color: var(--input-bg);
@@ -149,7 +151,7 @@
       <select id="labFilter" onchange="filterLabs()">
         <option value="">----Select----</option>
         <option value="User Guide">User Guide</option>
-        <option value="Lab 1: Technician Schedules and Rates">Lab 1: Technician Schedules and Rates</option>
+        <option value="Lab 1: Supervisor Foundations">Lab 1: Supervisor Foundations</option>
         <option value="Lab 2: Clinical Device Verification">Lab 2: Clinical Device Verification</option>
         <option value="Lab 3: Preventive Maintenance Definitions">Lab 3: Preventive Maintenance Definitions</option>
       </select>
@@ -184,18 +186,22 @@
     </section>
 
     
-    <section class="lab-section" data-lab="Lab 1: Technician Schedules and Rates">
-      <h2>Lab 1: Technician Schedules and Rates</h2>
-      <p>In this lab, you will learn how to navigate the Nuvolo system and understand technician schedules and rates.</p>
+    <section class="lab-section" data-lab="Lab 1: Supervisor Foundations">
+      <h2>Lab 1: Supervisor Foundations</h2>
+      <p>In this lab, you will learn how to enable User Attributes, set Technician Schedules and check Internal Rates.</p>
+      <p>Follow the steps in each part. You’ll practice the exact click-paths used in class and answer short knowledge-checks at the end of each part. Type your answers in the spaces provided.</p>
       <h3>Part 1: User Attributes</h3>
       <ol>
-        <li>In the "All" section, search for "User Attributes" and select "Nuvolo User Attributes" under the Clinical Asset Management Admin Module.
+        <li>Navigate to User Attributes. Select All in the Filter Navigator. Type user in the search bar and select Nuvolo User Attributes (under Clinical Asset Management Admin).
           <img src="Lab-Images/lab1-9.png" alt="User Attributes Search Result" style="max-width: 100%;">
         </li>
-        <li>Search and click on your Name via filtering the Name column
+        <li>Click the Show/Hide Filter (funnel) button. Remove all conditional filters by selecting the red X buttons. Click Run.
+            <img src="Lab-Images/lab1-9.1.png" alt="" style="max-width: 100%;">
+        </li>
+        <li>Click the Show Column Search Row button. Type your name in the Name column search box. Press Enter. 
             <img src="Lab-Images/lab1-10.png" alt="User Attributes Name Search" style="max-width: 100%;">
         </li>
-        <li>Select your Name and review the following data fields for accuracy:
+        <li>Select your Name (by selecting the blue hyperlinked name) and review the following data fields for accuracy:
             <ul>
                 <li>Facility: The facility you report to on an organizational chart</li>
                 <li>Duty Station: The facility you are performing work actions at currently</li>
@@ -206,26 +212,42 @@
             <img src="Lab-Images/lab1-11.png" alt="User Attributes Data Fields" style="max-width: 100%;">
         </li>
         <li>Once confirmed, select "Update" (only necessary if you make changes)</li>
-        <li>Repeat this steps for at least 2 additional technicians at your site</li>
+        <li>Repeat this steps for at least 2 additional technicians at your site. Which technicians did you update? <input type="text" name="q1" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
+        <li>Which two data fields under the New Section tab do you have the option to put a check mark?
+      <button class="toggle-button" onclick="toggleAnswer('answer1', this)">Show Answer</button></li>
+      <div id="answer1" class="answer">
+        <p><strong>A:</strong> HTM User and HTM Manager</p>
+      </div>
+      <li>Who is responsible for enabling HTM user profiles?
+      <button class="toggle-button" onclick="toggleAnswer('answer2', this)">Show Answer</button></li>
+      <div id="answer2" class="answer">
+        <p><strong>A:</strong> Supervisors/HTM Managers</p>
+      </div>
+      <li>Which checkbox grants access to Nuvolo as an HTM user?</strong>
+      <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+      <div id="answer3" class="answer">
+        <p><strong>A:</strong> HTM User (and HTM Manager if applicable).</p>
+      </div>
       </ol>
         <h3>Part 2: Technician Schedules</h3>
         <ol>
         <li>In the "All" filter navigator, search for "Technician Schedules" and select it.
           <img src="Lab-Images/lab1-1.png" alt="Technician Schedules Search Result" style="max-width: 100%;">
         </li>
-        <li>We're going to create a New Technician Schedule. Select the "New" button.
+        <li>We're going to create a New Technician Schedule for the technicians you updated User Attributes for. Select the "New" button.
           <img src="Lab-Images/lab1-2.png" alt="New Technician Schedule Button" style="max-width: 100%;">
         </li>
-        <li>Fill out the following fields on the form using your OWN name.
+        <li>Fill out the following fields on the form using one of your technicians.
           <ul>
-            <li><strong>Name:</strong> Your Full Name - HTM151 Lab</li>
-            <li><strong>Technician:</strong> Your Full Name (Use the magnifying glass to search)</li>
+            <li><strong>Name:</strong> Technician Name</li>
+            <li><strong>Technician:</strong> Technician Name (Use the magnifying glass to search)</li>
             <li><strong>Schedule Type:</strong> Shift</li>
             <li><strong>Description:</strong> HTM151 Technician Schedule Example</li>
           </ul>
           <img src="Lab-Images/lab1-3.png" alt="Technician Schedule Form" style="max-width: 100%;">
         </li>
-        <li>Let's find your schedule! In the "Name" search bar, enter "*" and then your Last name
+        <li>Repeat these steps for the other technician you updated User Attributes for.</li>
+        <li>Let's find the schedule! In the "Name" search bar, enter "*" and then the last name of either of the technicians you created.
             <img src="Lab-Images/lab1-4.png" alt="Search Technician Schedule" style="max-width: 100%;">
         </li>
         <li> Select your Technician Schedule from the list and click on "Load Related Lists" at the bottom of the page.
@@ -236,10 +258,10 @@
         </li>
         <li>Fill out the following fields on the Schedule Entry form:
           <ul>
-            <li><strong>Name:</strong> Your Name Monday-Friday</li>
+            <li><strong>Name:</strong> Technician Name Monday-Friday</li>
             <li><strong>Type:</strong> --None-- </li>
             <li><strong>Show as:</strong> Busy</li>
-            <li><strong>When:</strong> Today's Date and Your Work Hours</li>
+            <li><strong>When:</strong> Today's Date and Their Work Hours</li>
             <li><strong>Repeats:</strong> Every Weekday</li>
             <li><strong>Repeat Until:</strong> Leave Blank</li>
             <li><strong>Type:</strong> Leave Blank</li>
@@ -249,6 +271,15 @@
         <li>Submit the Schedule Entry. You'll see the schedule entry appear in the related list.
             <img src="Lab-Images/lab1-8.png" alt="Schedule Entry in Related List" style="max-width: 100%;">
         </li>
+        <li>Repeat these steps for the other technician.</li>
+        <li>What happens to workorders if a technician has no active schedule?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Work orders route to the assignment group </p>
+        <li>Where do you add the daily time range for a schedule?</strong>
+      <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+      <div id="answer3" class="answer">
+        <p><strong>A:</strong> In the Schedule Entry (When section) or use the All‑day checkbox. </p>
         </ol>
     <h3>Part 3: Rates</h3>
     <p>Let’s make sure you know how to accurately view and update your technician’s pay rates within Nuvolo. This ensures proper record keeping to see how much labor cost is being put into specific devices. It will help make decisions on device maintenance and upkeep versus device replacement.</p>
@@ -261,14 +292,15 @@
         </li>
         <li>We're going to create a new employee rate. Fill out the following fields on the Employee Rate form:
             <ul>
-                <li><strong>Employee:</strong> Kevin Jeter</li>
+                <li><strong>Employee:</strong> One of the technicians names</li>
                 <li><strong>Position Entry Date:</strong> Today's Date</li>
                 <li><strong>Facility:</strong> Your Facility</li>
             </ul>
             <img src="Lab-Images/lab1-14.png" alt="Employee Rate Form" style="max-width: 100%;">
         </li>
         <li>Submit the Employee Rate.</li>
-        <li>Search and find the employee rate you just created using the Employee search (Hint: type *Jeter)
+        <li>Repeat for the other technician</li>
+        <li>Search and find the first employee rate you just created using the Employee search (Hint: type *Jeter)
             <img src="Lab-Images/lab1-15.png" alt="Search Employee Rate" style="max-width: 100%;">
         </li>
         <li>Open the entry by selecting the blue hyperlink under "Yearly."</li> 
@@ -280,18 +312,27 @@
             </ul>
             <img src="Lab-Images/lab1-16.png" alt="Employee Rate Labor Rate Field" style="max-width: 100%;">
         </li>
-        <li>Finally, let's fill out the rest of Kevin' Internal Rate Information. Fill out the following fields:
+        <li>Finally, let's fill out the rest of Kevin' Internal Rate Information. Fill out or confirm the following fields:
             <ul>
-                <li>Pay Plan: GS</li>
-                <li>Classification Series: Enter the job series. (0858 is for BME)</li>
-                <li>Grade: Enter Pay Grade</li>
-                <li>Step: Enter current pay grade step</li>
-                <li>Role: Enter HTM Role</li>
+                <li><strong>Yearly:</strong> Enter value from MSS</li>
+                <li><strong>Pay Plan:</strong> Enter GS</li>
+                <li><strong>Classification Series:</strong> Enter the job series. (0858 is for BME)</li>
+                <li><strong>Grade:</strong> Enter Pay Grade</li>
+                <li><strong>Step:</strong> Enter current pay grade step</li>
+                <li><strong>Role:</strong> Enter HTM Role</li>
             </ul>
             <img src="Lab-Images/lab1-17.png" alt="Employee Rate Additional Fields" style="max-width: 100%;">
         </li>
         <li>Select "Update" and you've completed updating the employee rate.</li>
-        <li>Repeat these steps for at least two additional employees.</li>
+        <li>Repeat these steps for the other technician.</li>
+        <li>Where do rate values originate?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Manager Self Service (MSS)</p>
+        <li>Who can obtain the required values if you cannot access MSS?</strong>
+            <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
+            <div id="answer3" class="answer">
+            <p><strong>A:</strong> Supervisory BESSs/BMEs or your VISN chief</p>
         </ol> 
 </section>
 
@@ -427,6 +468,16 @@
       document.body.classList.toggle('dark', themeToggle.checked);
       document.body.classList.toggle('light', !themeToggle.checked);
     });
+    function toggleAnswer(id, button) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+        button.innerHTML = "Hide Answer";
+      } else {
+        x.style.display = "none";
+        button.innerHTML = "Show Answer";
+      }
+    }
   </script>
 </body>
 
