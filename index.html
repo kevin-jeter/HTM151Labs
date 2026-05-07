@@ -128,6 +128,25 @@
 
     .answer { display: none; margin-top: 10px; padding: 10px; background-color: var(--table-alt-row-bg); border-radius: 4px; }
 
+    .banner {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  font-size: 13.5pt;
+  line-height: 1.45;
+  text-align: center;
+  font-weight: 500;
+}
+
+body.dark .banner {
+  background-color: #5c4a00;
+  color: #ffeaa7;
+  border-color: #ffeaa7;
+}
+
         input[type="text"],
     select {
       background-color: var(--input-bg);
@@ -165,6 +184,9 @@
   </section>
 
   <main class="container">
+    <div class="banner">
+    Screenshots in these labs may not reflect exactly what you are seeing in your test environment, but the concepts and steps learned in the lectures can still be applied.
+  </div>
     <section class="lab-section active" data-lab="User Guide">
       <h2>User Guide</h2>
       <p>Welcome to the HTM151: Nuvolo for Managers Labs! This guide is designed to help you navigate through the various labs included in this course. Each lab focuses on a specific aspect of using Nuvolo, providing hands-on experience and practical knowledge.</p>
@@ -240,14 +262,14 @@
         </li>
         <li>We're going to create a new employee rate. Fill out the following fields on the Employee Rate form:
             <ul>
-                <li><strong>Employee:</strong> One of the technicians names</li>
+                <li><strong>Employee:</strong> Kevin Jeter, Kevin.Jeter@va.gov</li>
                 <li><strong>Position Entry Date:</strong> Today's Date</li>
-                <li><strong>Facility:</strong> Your Facility</li>
+                <li><strong>Facility:</strong> Walla Walla, WA</li>
             </ul>
             <img src="Lab-Images/lab1-14.png" alt="Employee Rate Form" style="max-width: 100%;">
         </li>
         <li>Submit the Employee Rate.</li>
-        <li>Repeat for the other technician</li>
+        <li>Repeat for another technician</li>
         <li>Search and find the first employee rate you just created using the Employee search (Hint: type *Jeter)
             <img src="Lab-Images/lab1-15.png" alt="Search Employee Rate" style="max-width: 100%;">
         </li>
@@ -395,14 +417,14 @@
         </li>
         <li>Fill out the following fields:
           <ul>
-            <li><strong>Name:</strong> VISN 20 - WWW - CAPNOMETERS - CAPNOCHECK II</li>
+            <li><strong>Name:</strong> Leave this blank! Nuvolo automatically generates the name based on the other fields.</li>
             <ul>
-              <li><strong>Note:</strong> Replace VISN with your correct VISN and "WWW" with your three-letter HTM Program TLA</li>
             </ul>
-            <li><strong>VISN:</strong> Choose your VISN</li>
-            <li><strong>Facility:</strong> Remove this Filter for our Labs. You'll want this when creating them normally though!</li>
-            <li><strong>Model Name:</strong> CAPNOCHECK II</li>
+            <li><strong>VISN:</strong> VISN 20</li>
+            <li><strong>Facility:</strong> Walla Walla, WA</li>
+            <li><strong>Model Name:</strong> ends with PALMSAT 2500A</li>
             <li><strong>Status:</strong> In Use, Loaned Out, Out of Service</li>
+            <li><strong>Operational Status:</strong> is not NONE</li>
           </ul>
           <img src="Lab-Images/lab3-3.png" alt="PM Definition Form" style="max-width: 100%;">
         </li>
