@@ -170,7 +170,7 @@ body.dark .banner {
       <select id="labFilter" onchange="filterLabs()">
         <option value="">----Select----</option>
         <option value="User Guide">User Guide</option>
-        <option value="Lab 1: Supervisor Foundations">Lab 1: Supervisor Foundations</option>
+        <option value="Lab 1: HTM User Management">Lab 1: HTM User Management</option>
         <option value="Lab 2: Clinical Device Verification">Lab 2: Clinical Device Verification</option>
         <option value="Lab 3: Preventive Maintenance Definitions">Lab 3: Preventive Maintenance Definitions</option>
       </select>
@@ -208,104 +208,124 @@ body.dark .banner {
     </section>
 
     
-    <section class="lab-section" data-lab="Lab 1: Supervisor Foundations">
-      <h2>Lab 1: Supervisor Foundations</h2>
-      <p>In this lab, you will learn how to enable User Attributes, set Technician Schedules and check Internal Rates.</p>
-      <p>Follow the steps in each part. You’ll practice the exact click-paths used in class and answer short knowledge-checks at the end of each part. Type your answers in the spaces provided.</p>
-      <h3>Part 1: User Attributes</h3>
+    <section class="lab-section" data-lab="Lab 1: HTM User Management">
+      <h2>Lab 1: HTM User Management</h2>
+      <h3>HTM User / Manager Setup</h3>
+      <p>The Jonathan M Wainwright Memorial VA Medical Center at Walla Walla, WA has just gone on a mass hiring spree! The HTM department has benefited by onboarding many new employees across all job series and titles. These new HTM employees need to be granted access in Nuvolo to include the onboarding tasks detailed below.</p>
+      <ul>
+        <li>All HTM employees must be added to the HTM WWW Biomedical group. Select HTM employees in supervisory roles must be additionally added to the HTM WWW Management group.</li>
+        <li>All HTM employees must be granted HTM User and/or HTM Manager access, as applicable.</li>
+        <li>All HTM Employees must have an internal rate configured.</li>
+      </ul>
+      <p>Instructions: </p>
+      <p>As one of the HTM department’s Administrative Officers, you will find your employee on the spreadsheet in the chat and configure them in Nuvolo to grant them access as HTM Users and/or HTM Managers, where applicable.</p>
+      <h3>Part 1: Groups</h3>
       <ol>
-        <li>Navigate to User Attributes. Select All in the Filter Navigator. Type user in the search bar and select Nuvolo User Attributes (under Clinical Asset Management Admin).
-          <img src="Lab-Images/lab1-9.png" alt="User Attributes Search Result" style="max-width: 100%;">
+        <li>Select All in the Filter Navigator. Type Group in the search box and select Groups.
+          <img src="Lab-Images/Part 1_Step 1.png" alt="Groups Search Result" style="max-width: 100%;">
         </li>
-        <li>Click the Show/Hide Filter (funnel) button. Remove all conditional filters by selecting the red X buttons. Click Run.
-            <img src="Lab-Images/lab1-9.1.png" alt="" style="max-width: 100%;">
+        <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).
+          <img src="Lab-Images/Part 1_Step 2.png" alt="Show Column Search Row Button" style="max-width: 100%;">
         </li>
-        <li>Click the Show Column Search Row button. Type your name in the Name column search box. Press Enter. 
-            <img src="Lab-Images/lab1-10.png" alt="User Attributes Name Search" style="max-width: 100%;">
+        <li>In the Name column search box, type HTM WWW Biomedical and press Enter.
+          <img src="Lab-Images/Part 1_Step 2.png" alt="HTM WWW Biomedical Group Search Result" style="max-width: 100%;">
         </li>
-        <li>Select your Name (by selecting the blue hyperlinked name) and review the following data fields for accuracy:
-            <ul>
-                <li>Facility: The facility you report to on an organizational chart</li>
-                <li>Duty Station: The facility you are performing work actions at currently</li>
-                <li>HTM User. Make sure this box is checked to ensure you have access to Nuvolo</li>
-                <li>HTM Manager. Make sure this box is checked to ensure you have manager privileges in Nuvolo</li>
-                <li>HTM Primary Role. Your user role, as applicable</li>
-            </ul>
-            <img src="Lab-Images/lab1-11.png" alt="User Attributes Data Fields" style="max-width: 100%;">
+        <li>Click the hyperlinked Group name to open the record.</li>
+        <li>(As Applicable) Scroll to the bottom of the Group form and click Load Related Lists.</li>
+        <li>Click on the Group Members tab. Click the Edit button to add employees to the Group.
+          <img src="Lab-Images/Part 1_Step 5.png" alt="Edit Group Members Button" style="max-width: 100%;">
         </li>
-        <li>Once confirmed, select "Update" (only necessary if you make changes)</li>
-        <li>Repeat this steps for at least 2 additional technicians at your site. Which technicians did you update? <input type="text" name="q1" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-        <li>Which two data fields under the New Section tab do you have the option to put a check mark?
-      <button class="toggle-button" onclick="toggleAnswer('answer1', this)">Show Answer</button></li>
-      <div id="answer1" class="answer">
-        <p><strong>A:</strong> HTM User and HTM Manager</p>
-      </div>
-      <li>Who is responsible for enabling HTM user profiles?
-      <button class="toggle-button" onclick="toggleAnswer('answer2', this)">Show Answer</button></li>
-      <div id="answer2" class="answer">
-        <p><strong>A:</strong> Supervisors/HTM Managers</p>
-      </div>
-      <li>Which checkbox grants access to Nuvolo as an HTM user?</strong>
-      <button class="toggle-button" onclick="toggleAnswer('answer3', this)">Show Answer</button></li>
-      <div id="answer3" class="answer">
-        <p><strong>A:</strong> HTM User (and HTM Manager if applicable).</p>
-      </div>
+        <li>In the Edit Members screen, type the HTM employee’s first and last name in the Collection table’s search box. Ensure the employee’s User ID (in parenthesis) matches the value on the spreadsheet.
+          <img src="Lab-Images/Part 1_Step 7.png" alt="Search Employee in Collection Table" style="max-width: 100%;">
+        </li>
+        <li>Select the correct employee in the search results and click the Add button (>) to add them to the Group Members List.</li>
+        <li>Click the Save button to save and exit the Edit Members screen. Click the Update button to exit the Group record.</li>
+        <li>If the HTM employee is in a supervisory position, as indicated on the spreadsheet, repeat steps 2 through 7 using HTM WWW Management as the Group.
+          <img src="Lab-Images/Part 1_Step 10.png" alt="HTM WWW Management Group Search Result" style="max-width: 100%;">
+        </li>
       </ol>
-    <h3>Part 2: Rates</h3>
-    <p>Let’s make sure you know how to accurately view and update your technician’s pay rates within Nuvolo. This ensures proper record keeping to see how much labor cost is being put into specific devices. It will help make decisions on device maintenance and upkeep versus device replacement.</p>
-      <ol>
-        <li>In the "All" filter navigator, search for "Internal Employee Rates" and select it.
-          <img src="Lab-Images/lab1-12.png" alt="Technician Rates Search Result" style="max-width: 100%;">
-        </li>
-        <li>Let's create a new Employee Rate. Select the New button.
-            <img src="Lab-Images/lab1-13.png" alt="New Employee Rate Button" style="max-width: 100%;">
-        </li>
-        <li>We're going to create a new employee rate. Fill out the following fields on the Employee Rate form:
-            <ul>
-                <li><strong>Employee:</strong> Kevin Jeter, Kevin.Jeter@va.gov</li>
-                <li><strong>Position Entry Date:</strong> Today's Date</li>
-                <li><strong>Facility:</strong> Walla Walla, WA</li>
-            </ul>
-            <img src="Lab-Images/lab1-14.png" alt="Employee Rate Form" style="max-width: 100%;">
-        </li>
-        <li>Submit the Employee Rate.</li>
-        <li>Repeat for another technician</li>
-        <li>Search and find the first employee rate you just created using the Employee search (Hint: type *Jeter)
-            <img src="Lab-Images/lab1-15.png" alt="Search Employee Rate" style="max-width: 100%;">
-        </li>
-        <li>Open the entry by selecting the blue hyperlink under "Yearly."</li> 
-        <li>We need to calculate Kevin's Labor rate. To do so, follow these steps:
-            <ul>
-                <li>Annual Salary: $40,000</li>
-                <li>Divide this by 2080: $40,000 / 2080 = $19.23 (round to the nearest cent)</li>
-                <li>Enter $19.23 into the "Labor Rate" field</li>
-            </ul>
-            <img src="Lab-Images/lab1-16.png" alt="Employee Rate Labor Rate Field" style="max-width: 100%;">
-        </li>
-        <li>Finally, let's fill out the rest of Kevin's Internal Rate Information. Fill out or confirm the following fields:
-            <ul>
-                <li><strong>Yearly:</strong> Enter value from MSS</li>
-                <li><strong>Pay Plan:</strong> Enter GS</li>
-                <li><strong>Classification Series:</strong> Enter the job series. (0858 is for BME)</li>
-                <li><strong>Grade:</strong> Enter Pay Grade</li>
-                <li><strong>Step:</strong> Enter current pay grade step</li>
-                <li><strong>Role:</strong> Enter HTM Role</li>
-            </ul>
-            <img src="Lab-Images/lab1-17.png" alt="Employee Rate Additional Fields" style="max-width: 100%;">
-        </li>
-        <li>Select "Update" and you've completed updating the employee rate.</li>
-        <li>Repeat these steps for the other technician.</li>
-        <li>Where do rate values originate?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer6', this)">Show Answer</button></li>
-            <div id="answer6" class="answer">
-            <p><strong>A:</strong> Manager Self Service (MSS)</p>
-            </div>
-        <li>Who can obtain the required values if you cannot access MSS?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer7', this)">Show Answer</button></li>
-            <div id="answer7" class="answer">
-            <p><strong>A:</strong> Supervisory BESSs/BMEs or your VISN chief</p>
-            </div>
-        </ol> 
+    <h3>Part 2: User Attributes</h3>
+    <ol>
+      <li>Select All in the Filter Navigator. Type User in the search box and select Nuvolo User Attributes.
+        <img src="Lab-Images/Part 2_Step 11.png" alt="Nuvolo User Attributes Search Result" style="max-width: 100%;">
+      </li>
+      <li>Below the Nuvolo User Attributes list title, select the All link to remove default filters.</li>
+      <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+      <li>In the Name column search box, type the employee’s first and last name and press Enter.
+        <img src="Lab-Images/Part 2_Step 13.png" alt="Search Employee in Nuvolo User Attributes" style="max-width: 100%;">
+      </li>
+      <li>Ensure the employee’s User ID (in parenthesis) matches the value on the spreadsheet and click the hyperlinked employee name to open the record.</li>
+      <li>Search for and select Walla Walla, WA (WWW) for the Facility and Duty Station.
+        <img src="Lab-Images/Part 2_Step 16.png" alt="Select Facility and Duty Station" style="max-width: 100%;">
+      </li>
+      <li>Check the HTM User checkbox to grant employees access to Nuvolo. For supervisory employees, check the HTM Manager checkbox as well.
+        <img src="Lab-Images/Part 2_Step 17.png" alt="Grant HTM User and Manager Access" style="max-width: 100%;">
+      </li>
+      <li>Select the HTM Primary Role indicated on the spreadsheet.</li>
+      <li>Click the Update to apply changes and close the record.</li>
+    </ol>
+    <h3>Part 3: Internal Rates</h3>
+    <ol>
+      <li>Select All in the Filter Navigator. Type Rates in the search box and select Internal Employee Rates.
+        <img src="Lab-Images/Part 3_Step 20.png" alt="Internal Employee Rates Search Result" style="max-width: 100%;">
+      </li>
+      <li>Click the New button to generate an Internal Rates record.</li>
+      <li>Click the Search button (magnifying glass) for the Employee field. 
+        <img src="Lab-Images/Part 3_Step 22.png" alt="Search Employee for Internal Rates" style="max-width: 100%;">
+      </li>
+      <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+      <li>Type the employee’s first and last name in their respective column search boxes and press enter. </li>
+      <li>Ensure the employee’s User ID matches the value on the spreadsheet and click the hyperlinked employee’s first name.</li>
+      <li>Search for and select Walla Walla, WA (WWW) for the Facility field.</li>
+      <li>Select the Submit button to initially save the Internal Rates record.</li>
+      <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+      <li>Type the employee’s first and last name in the Employee column search box and press Enter. Click the hyperlinked Yearly value ($0.00) to re-open the Internal Rates record.</li>
+      <li>Using the spreadsheet, type or copy the corresponding Yearly and Hourly values into the Yearly and Labor Rate fields. Type or copy the Hourly value into the Travel Rate. 
+        <img src="Lab-Images/Part 3_Step 29.png" alt="Enter Yearly, Labor, and Travel Rates" style="max-width: 100%;">
+      </li>
+      <li>Optionally, type or copy the corresponding Pay Plan, Classification Series, Grade, and Step values.</li>
+      <li>Click the Update button to save changes and exit the Internal Rates record.</li>
+    </ol>
+    <h3>Optional: Technician Schedules</h3>
+    <p>The Medical Center Director for the Jonathan M Wainwright Memorial VA Medical Center has implemented new operating hours for the facility. The facility will now to be open and will see Veterans Monday through Friday, 0700 to 1730, effective immediately. With so many HTM employees in the department, the Chief Biomedical Engineer has decided that employees will be divided into two shifts to allow coverage for the extended operating hours while minimizing Premium Pay costs.</p>
+    <ol>
+      <li>Shift A: Monday through Thursday, 0700 to 1730</li>
+      <li>Shift B: Tuesday through Friday, 0700 to 1730</li>
+    </ol>
+    <p>Nuvolo has already been configured to allow the automatic assignment of Clinical Work Orders to employees following Nuvolo’s Assignment Logic. To reflect the department’s transition to shifts, Clinical Technician Schedules will be entered in Nuvolo so the Nuvolo Assignment Logic will continue to assign Clinical Work Orders to only the employees present during the week, particularly on Mondays and Fridays.</p>
+    <p>INSTRUCTIONS: As one of the HTM department’s Administrative Officers, generate a Clinical Technician Schedule for your employee on the attached spreadsheet and configure their Schedule Entry to reflect the shift to which they are assigned.</p>
+    <h3>Optional Part 1: Schedules</h3>
+    <ol>
+      <li>Select All in the Filter Navigator. Type Schedule in the search box and select Technician Schedule.
+        <img src="Lab-Images/Optional_Step 1.png" alt="Technician Schedule Search Result" style="max-width: 100%;">
+      </li>
+      <li>Click the New button to generate a Clinical Technician Schedules record.</li>
+      <li>In the Technician field, click the Search button (magnifying glass).
+        <img src="Lab-Images/Optional_Step 3.png" alt="Search Technician for Schedule" style="max-width: 100%;">
+      </li>
+      <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+      <li>Type the employee’s first and last name in the search box and press Enter.</li>
+      <li>Ensure the employee’s User ID matches the value on the spreadsheet and click the hyperlinked employee’s first name.</li>
+      <li>Copy the selected Technician field value and paste it into the Name field.</li>
+      <li>Select the Submit button to initially save the Clinical Technician Schedules record.</li>
+      <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+      <li>Type the employee’s first and last name in the Employee column search box and press Enter. Click the hyperlinked Name to re-open the record.
+        <img src="Lab-Images/Optional_Step 9.png" alt="Search Employee in Technician Schedule" style="max-width: 100%;">
+      </li>
+      <li>(As Applicable) Scroll to the bottom of the Group form and click Load Related Lists. </li>
+      <li>Click the New button in the Schedule Entries tab to generate a new entry record.</li>
+      <li>In the Name field, type A-Shift or B-Shift, as applicable. Ignore the Type and Show As fields. </li>
+      <li>In the When section, check the All Day checkbox. Change both dates to September 30th of the current calendar year.</li>
+      <li>In the Repeats field, select Specific. Leave the Repeats Every defaulted to 1 day.</li>
+      <li>In the Repeats On field, check the days of the week the employee will be working and leave all other days unchecked.
+        <ol type="a">
+          <li>Shift A: Check Mon, Tues, Wed, Thu</li>
+          <li>Shift B: Check Tues, Wed, Thu, Fri</li>
+        </ol>
+        <img src="Lab-Images/Optional_Step 13.png" alt="Schedule Entry Configuration" style="max-width: 100%;">
+      </li>
+      <li>Click the Submit button to save the Schedule Entry.</li>
+    </ol>
 </section>
 
     <section class="lab-section" data-lab="Lab 2: Clinical Device Verification">
