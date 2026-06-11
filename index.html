@@ -329,199 +329,127 @@ body.dark .banner {
 </section>
 
     <section class="lab-section" data-lab="Lab 2: Clinical Device Verification">
-      <h2>Lab 2: Clinical Device Verification and Work Order Assignment</h2>
+      <h2>Lab 2: Clinical Device Verifications</h2>
+      <p>The Jonathan M Wainwright Memorial VA Medical Center at Walla Walla, WA has just opened its new multi-specialty inpatient hospital as part of a major activations project. Many Clinical Devices were purchased with activations funds and have been added to the facility’s inventory of record, AEMS/MERS, by Logistics.</p>
+      <p>The HTM department’s Administrative Officer has already assigned the new Equipment Records to an HTM Responsible Shop in AEMS/MERS and the corresponding Clinical Devices records have generated in Nuvolo by the Daily Device Feed; however, the new Clinical Devices need to “verified” and incoming inspection work orders generated.</p>
+      <p>INSTRUCTIONS: As an HTM Manager, you have been tasked to verify the assigned Clinical Devices indicated on the attached spreadsheet in Nuvolo and ensuring the incoming inspection work orders are generated.</p>
       <h3>Part 1: Navigation and Primary Data Fields</h3>
       <ol>
-        <li>In the "All" filter navigator, search for "Unverified Devices" and select it. You may need to add "Verified" as a column to see the unverified devices.
-          <img src="Lab-Images/lab2-1.png" alt="Unverified Devices Search Result" style="max-width: 100%;">
+        <li>Select All in the Filter Navigator. Type Unverified in the search box and select Unverified Devices (Pre-Validated).
+          <img src="Lab-Images/Lab 2_Part 1_Step 1.png" alt="Unverified Devices Search Result" style="max-width: 100%;">
         </li>
-        <li>Click on the first Unverified Device to view its details. Hint: You must select the Asset Tag to open the device! 
-          <img src="Lab-Images/lab2-2.png" alt="Unverified Device Details" style="max-width: 100%;">
+        <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+        <li>Type the Asset/EE# in the Asset Tag column search box and press Enter. Click the hyperlinked number to open the record.</li>
+        <li>On the main Clinical Work Orders form, verify the following data fields are correct and update as needed.
+          <ol type="a">
+            <li>Asset Model Name: Ensure the model is correct and matches the spreadsheet.</li>
+            <li>Operational Status. Ensure the Operational Status is Operational and not Non HTM Supported.</li>
+          </ol>
+          <img src="Lab-Images/Lab2_Part 1_Step 4.png" alt="Verify Clinical Device Data Fields" style="max-width: 100%;">
         </li>
-        <li>Review the primary data fields on the device details page. Based on the information, answer the following questions:</li>
-        <ol type="i">
-          <li>What is the device's serial number?<input type="text" name="q1" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the Operational Status of this device? <input type="text" name="q2" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is there a Backup Available?<input type="text" name="q3" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is this device a Loaner? <input type="text" name="q4" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the Warranty Expiration date? <input type="text" name="q5" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the PM Support Group?<input type="text" name="q6" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What was the last activity on this device?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is this device Cerner compatible?<input type="text" name="q7" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-        </ol>
-        </li>
-        <li>Before verifying this device, let's find out how to automatically assign groups for PM and CM Support on this device. Select the "Resources" tab.
-            <img src="Lab-Images/lab2-8.png" alt="Resources Tab" style="max-width: 100%;">
-        </li>
-        <li>Let's update the PM Support Group. Select the "Eyeglass" icon next to the PM Support Group field.
-          <img src="Lab-Images/lab2-9.png" alt="Eyeglass Icon" style="max-width: 100%;">
-        </li>
-        <li>In the pop-up window, select one of the groups to give them automatic assignment to this device.
-            <img src="Lab-Images/lab2-10.png" alt="Select Group Pop-up" style="max-width: 100%;">
-        </li>
-        <li>Finally, let's verify this device. Select the "Verified" button and select Save.
-          <img src="Lab-Images/lab2-3.png" alt="Verify Device Button" style="max-width: 100%;">
-        </li>
-        <li>What time does the Daily Device Feed run every day?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer8', this)">Show Answer</button></li>
-            <div id="answer8" class="answer">
-            <p><strong>A:</strong> 2 AM EST </p>
-            </div>
-        <li>Where is device data pulled from to the daily device feed?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer9', this)">Show Answer</button></li>
-            <div id="answer9" class="answer">
-            <p><strong>A:</strong> Device data is pulled from AEMS/MERS (VistA), Maximo, NMDD </p>
-            </div>
-        <li>Where can you see the Daily Device Feed update history within a device record? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer10', this)">Show Answer</button></li>
-            <div id="answer10" class="answer">
-            <p><strong>A:</strong> Under the Activities tab at the bottom of the Clinical Devices record </p>
-            </div>
+        <li>Click on the Resources tab.</li>
       </ol>
       <h3>Part 2: Work Order Assignment</h3>
-        <p>We just used Automatic Assignment in the last lab, but how do we manage our groups and create new ones if we need to?</p>
-        <ol>
-        <li>In the "All" filter navigator, search for "Groups" and select it (Hint: It's the one under "Self Service")
-          <img src="Lab-Images/lab2-4.png" alt="Groups Search Result" style="max-width: 100%;">
+      <ol>
+        <li>In the Resources tab, verify and/or populate the following data fields. 
+          <ol type="a">
+            <li>Support Group. Ensure the Support Group is set to HTM WWW Biomedical.</li>
+            <li>Supported By. Search for an select your name as the Supported By.</li>
+          </ol>
         </li>
-        <li>In the list, search for "HTM" followed by the HTM Program TLA (in this example, we use ABQ. Yours will be different!) and select Enter
-          <img src="Lab-Images/lab2-5.png" alt="HTM Group Search Result" style="max-width: 100%;">
+        <li>Optionally, in the Resources tab, populate the CM, PM, Cyber, and Other Support Group and Supported By data fields.
+          <img src="Lab-Images/Lab 2_Part 2_Step 6.png" alt="Work Order Resources Fields" style="max-width: 100%;">
         </li>
-        <li>Select one of the groups. 
-          <img src="Lab-Images/lab2-6.png" alt="Select HTM Group" style="max-width: 100%;">
+        <li>Check the Verified checkbox.</li>
+        <li>Click the Update or Save button.</li>
+        <li>Ensure the new incoming inspection work order has been created banner displays.
+          <img src="Lab-Images/Lab 2_Part 2_Step 8.png" alt="Work Order Created Banner" style="max-width: 100%;">
         </li>
-        <li>At the bottom of the page, you can select "Load Related Lists" to view additional details like Roles, Group Members, Groups, Skills, etc.
-          <img src="Lab-Images/lab2-7.png" alt="Load Related Lists" style="max-width: 100%;">
-        </li>
-        <li>Review the data fields and answer the following questions: </li>
-        <ol type="i">
-          <li>What is the purpose/description of this group?<input type="text" name="q8" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>How many Group Members are in this group?<input type="text" name="q9" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>How many different Roles are assigned to this group?<input type="text" name="q10" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>Is the group Active?<input type="text" name="q11" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-          <li>What is the Group email?<input type="text" name="q12" placeholder="Enter your answer here" style="width: 100%; height: 30px;"></li>
-        </ol>
-        <li>What is the role of the Group Manager in a Support Group? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer11', this)">Show Answer</button></li>
-            <div id="answer11" class="answer">
-            <p><strong>A:</strong> Typically the HTM Manager or department chief responsible for overseeing the group’s settings and performance</p>
-            </div>
-        <li>What function does the Default Assignee serve in a Support Group? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer12', this)">Show Answer</button></li>
-            <div id="answer12" class="answer">
-            <p><strong>A:</strong> It determines the automatically assigned technician if no specific Supported By person is listed on the device</p>
-            </div>
-        <li>Why is accurate group membership critical for automatic assignment?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer13', this)">Show Answer</button></li>
-            <div id="answer13" class="answer">
-            <p><strong>A:</strong> Nuvolo uses Support Group membership to route CM, PM, Cyber, and Other work orders to the correct personnel</p>
-            </div>
-        <li>Why should you check your technician’s schedule before relying on automatic assignment? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer14', this)">Show Answer</button></li>
-            <div id="answer14" class="answer">
-            <p><strong>A:</strong> Because automatic assignment only works when a technician has an active schedule; otherwise, work orders default to the group instead.</p>
-            </div>
-        </ol>
+      </ol>
     </section>
 
 <section class="lab-section" data-lab="Lab 3: Preventive Maintenance Definitions">
-      <h2>Lab 3: Preventive Maintenance Definitions</h2>
-        <p>A key aspect of PMs is PM definitions. This is how PMs will be auto-generated within Nuvolo. For this lab, we'll focus on creating a PM definition for "PALMSAT 2500A"</p>
-        <h3>Part 1: Maintenance Definitions and Automatic Creation</h3>
-        <ol>
-        <li>In the "All" filter navigator, search for "Maintenance Definitions" and select it.
-          <img src="Lab-Images/lab3-1.png" alt="Preventive Maintenance Definitions Search Result" style="max-width: 100%;">
+      <h2>Lab 3: Preventive Maintenance Definitions and Instances</h2>
+      <p>The National PM Workgroup has issued a series of National OEM and AEM PM Standards to be implemented immediately for several Asset Types and Asset Model Names. To implement the National OEM and AEM Standards, Clinical Scheduled Maint Definitions will need to be created, configured, and activated.</p>
+      <p>INSTRUCTIONS: Using the attached spreadsheet, generate a Clinical Scheduled Maint Definition for the Asset Model Names previously updated, configure the PM definition accordingly, and, finally, activate the PM definition to generate the corresponding Clinical Scheduled Maintenances, or PM instances, for the affected Clinical Devices.</p>
+      <h3>Part 1: Maintenance Definitions</h3>
+      <ol>
+        <li>Select All in the Filter Navigator. Type Definitions in the search box and select 2. Maintenance Definitions.
+          <img src="Lab-Images/Lab 3_Part 1_Step 1.png" alt="Maintenance Definitions Search Result" style="max-width: 100%;">
         </li>
-        <li>Select "New" to create a new PM Definition.
-            <img src="Lab-Images/lab3-2.png" alt="New PM Definition Button" style="max-width: 100%;">
+        <li>Click the New button to generate a new Clinical Scheduled Maint Definition record.</li>
+        <li>Leave the Name field blank. This field will auto-populate when the PM definition is saved.</li>
+        <li>In the Asset Conditions filters, apply the following changes, but leave the remaining values defaulted to their current values. 
+          <ol type="a">
+            <li>Type the Asset Model Name value (or copy and paste) from the spreadsheet into the Asset Model Name ends with filter condition.</li>
+            <li>Type the Asset Type (or copy and paste) from the spreadsheet into the Asset Type is filter condition.</li>
+          </ol>
+        <img src="Lab-Images/Lab 3_Part 1_Step 4.png" alt="Asset Conditions Filter Configuration" style="max-width: 100%;">
         </li>
-        <li>Fill out the following fields:
-          <ul>
-            <li><strong>Name:</strong> Leave this blank! Nuvolo automatically generates the name based on the other fields.</li>
-            <ul>
-            </ul>
-            <li><strong>VISN:</strong> VISN 20</li>
-            <li><strong>Facility:</strong> Walla Walla, WA</li>
-            <li><strong>Model Name:</strong> ends with PALMSAT 2500A</li>
-            <li><strong>Status:</strong> In Use, Loaned Out, Out of Service</li>
-            <li><strong>Operational Status:</strong> is not NONE</li>
-          </ul>
-          <img src="Lab-Images/lab3-3.png" alt="PM Definition Form" style="max-width: 100%;">
+        <li>Click the Update Count (encircling arrows) button next to the No. of Records Matching the Condition. Ensure the updated count matches the Device Count from the spreadsheet.</li>
+        <li>In the Schedule field, click the Search (magnifying glass) button and select the corresponding value from the spreadsheet.
+          <img src="Lab-Images/Lab 3_Part 1_Step 6.png" alt="Select Schedule for PM Definition" style="max-width: 100%;">
         </li>
-        <li>Scroll down for the next section to fill out. Follow the screenshot below for all fields:
-          <img src="Lab-Images/lab3-4.png" alt="PM Definition Fields" style="max-width: 100%;">
+        <li>In the Work Order Type field, click the Search (magnifying glass) button and select the corresponding Type value from the spreadsheet.</li>
+        <li>In the Start Date field, click the Select Date (calendar) button and select the corresponding value from the spreadsheet.</li>
+        <li>In the Maintenance Source field, select the corresponding Standard Type value from the spreadsheet using Manufacturer for OEM.</li>
+        <li>Type the WO Summary value (or copy and paste) from the spreadsheet into the Work Order Summary field. Replace the <ASSET MODEL NAME> with the corresponding value the PM definition is being generated for.</li>
+        <li>In the Asset Type field, type the corresponding value (or copy and paste) from the spreadsheet. When the Asset Types appear below the field, click the value to confirm the selection. If multiple correct values are present, select any of them.
+          <img src="Lab-Images/Lab 3_Part 1_Step 11.png" alt="Select Asset Type for PM Definition" style="max-width: 100%;">
         </li>
-        <li>Select "Save" or "Submit" to complete the PM Definition creation.</li>
-        <li>Let's find your PM Definition in the list. One of the easiest ways to do so is by editing your columns and searching by "Created by"
-           <ul>
-            <li>Select the gear icon in the top right corner of the list view
-                <img src="Lab-Images/lab3-5.png" alt="Gear Icon for List Layout" style="max-width: 100%;">
-            </li>
-            <li>Search for "Created by" and add it to your selected columns
-                <img src="Lab-Images/lab3-6.png" alt="Add Created By Column" style="max-width: 100%;">
-            </li>
-            <li>In the column Search, type "*" and your Last Name to find your PM Definition
-                <img src="Lab-Images/lab3-7.png" alt="Search Created By Column" style="max-width: 100%;">
-            </li>
-           </ul> 
+        <li>In the Model field, type the corresponding value (or copy and paste) from the spreadsheet. When the Asset Model Names appear below the field, click the correct value to confirm the selection. If multiple correct values are present, select any of them.</li>
+        <li>Click the Save button to save changes to the PM definition.</li>
+        <li>Ensure the Name field automatically populates.</li>
+      </ol>
+      <h3>Part 2: Activate</h3>
+      <ol>
+        <li>Click the Activation button to activate the PM definition and generate the PM instances. In the confirmation dialog box, verify the count of PM instances to be created matches the Device Count from the spreadsheet and click OK.
+          <img src="Lab-Images/Lab 3_Part 2_Step 15.png" alt="Activate PM Definition" style="max-width: 100%;">
         </li>
-        <li>Select your newly created definition by clicking on the name
-          <img src="Lab-Images/lab3-8.png" alt="" style="width: 100%;"
+        <li>(As Applicable) Scroll to the bottom of the Clinical Scheduled Maint Definition form and click Load Related Lists. </li>
+        <li>In the Clinical Scheduled Maintenances tab, ensure the count in the parenthesis matches the Device Count from the spreadsheet. If the number is too low, click the Save button again until the expected number is displayed.</li>
+        <li>Verify that the PM instances Start Dates and the Asset Next Scheduled Maintenance dates populated according to the Start Date selected in the PM definition.
+          <img src="Lab-Images/Lab 3_Part 2_Step 17.png" alt="Verify PM Instance Dates" style="max-width: 100%;">
         </li>
-        <li>Confirm the PM Definition is activated. If it isn't, click "Activate" in the top right corner.
-          <img src="Lab-Images/lab3-9.png" alt="" style="width: 100%;"
+        <li>[OPTIONAL] For any of the PM instances, double-click the Start Date value and select 08/01/2026. Click the Save button and verify the Start Date and Asset Next Scheduled Maintenance date fields updated to 08/01/2026.</li>      
+      </ol>
+    </section>
+
+  <section class="lab-section" data-lab="Lab 4: YourHTM / VA-MDNS Model Matches">
+      <h2>Lab 4: YourHTM / VA-MDNS Model Matches</h2>
+      <p>Recently, the VA-MDNS workgroup released a series of new Naming Standards to be implemented by the end of the quarter. The HTM department’s Administrative Officer has already implemented the required updates to the Equipment Records in AEMS/MERS, thus ensuring VA-MDNS compliance and conformance percentages are maintained.</p>
+      <p>The recent changes to the inventory data in AEMS/MERS; however, has created Asset Type and Asset Model Name mismatches in Nuvolo, a Tier 2 metric on the National KPI Scorecard. The Chief Biomedical Engineer has directed that the corresponding Clinical Device records be updated by the end of the quarter.</p>
+      <p>INSTRUCTIONS: Using the attached spreadsheet, make the necessary corrections to the assigned Clinical Device records in Nuvolo, indicated by the Current Model name.</p>
+      <h3>Part 1: VA-MDNS</h3>
+      <ol>
+        <li>Select All in the Filter Navigator. Type Devices in the search box and select My Facility Devices.
+          <img src="Lab-Images/Lab 4_Part 1_Step 1.png" alt="My Facility Devices Search Result" style="max-width: 100%;">
         </li>
-        <li>Why won’t Clinical Scheduled Maintenances appear before clicking Activate? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer15', this)">Show Answer</button></li>
-            <div id="answer15" class="answer">
-            <p><strong>A:</strong> Can only be generated only after the definition is activated.</p>
-            </div>
-        <li>Where do you see the number of matching assets for your conditions? </strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer16', this)">Show Answer</button></li>
-            <div id="answer16" class="answer">
-            <p><strong>A:</strong> In the Asset Conditions in the link: No. of records matching the conditions</p>
-            </div>
-        <li>What are the two related lists you should verify after activation?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer17', this)">Show Answer</button></li>
-            <div id="answer17" class="answer">
-            <p><strong>A:</strong> Maintenance Instance and Upcoming Scheduled Maintenance in Load Related List </p>
-            </div>
-        </ol>
-        <h3>Part 2: Generate Now (Ad Hoc Generation)</h3>
-        <p>If a new asset/model has no existing definition, set Generation Type to Generate Now to create a work order</p>
-        <ol>
-          <li>Renavigate to the "Maintenance Definitions" main page.</li>
-          <li>Select "New" to create a new PM Definition.
-            <img src="Lab-Images/lab3-2.png" alt="New PM Definition Button" style="max-width: 100%;">
+        <li>(As Applicable) Click the Show Column Search Row button (magnifying glass).</li>
+        <li>Click the Column Options (three-dots) next to the Asset Tag column header and click Sort (A to Z). </li>
+        <li>Type the Current Model value (or copy and paste) from the spreadsheet into the Asset Model Name column search box and press Enter.</li>
+        <li>Ensure the count of results displayed matches the Device Count value from the spreadsheet. 
+          <img src="Lab-Images/Lab 4_Part 1_Step 4.png" alt="Search Current Model in Asset Model Name Column" style="max-width: 100%;">
         </li>
-          <li>Fill out the following fields:
-          <ul>
-            <li><strong>Name:</strong> Leave this blank! Nuvolo automatically generates the name based on the other fields.</li>
-            <ul>
-            </ul>
-            <li><strong>VISN:</strong> VISN 20</li>
-            <li><strong>Facility:</strong> Walla Walla, WA</li>
-            <li><strong>Model Name:</strong> ends with PALMSAT 2500A</li>
-            <li><strong>Status:</strong> In Use, Loaned Out, Out of Service</li>
-            <li><strong>Operational Status:</strong> is not NONE</li>
-          </ul>
-          <img src="Lab-Images/lab3-3.png" alt="PM Definition Form" style="max-width: 100%;">
+        <li>Open the first Clinical Devices record by clicking on the hyperlinked Asset Tag number.</li>
+        <li>Click the Search button (magnifying glass) in the Asset Model Name data field.</li>
+        <li>Type the Correct Model value (or copy and paste) from the spreadsheet into the Model Name column search box in the Models dialog box and press Enter.
+            <img src="Lab-Images/Lab 4_Part 1_Step 8.png" alt="Search Correct Model in Models Dialog Box" style="max-width: 100%;">
         </li>
-        <li>In the below section, select "Generate Now" in Generation Type. Note that Start Date is greyed out when it's selected.
-          <img src="Lab-Images/lab3-10.png" alt="PM Definition Form" style="max-width: 100%;">
+        <li>Ensure the correct model value displayed shows vamdns_guidance as the External Source.
+          <img src="Lab-Images/Lab 4_Part 1_Step 9.png" alt="Select Correct Model from Search Results" style="max-width: 100%;">
         </li>
-        <li>Select "Save" or "Submit" to complete the PM Definition creation.</li>
-        <li>Does Generate Now create PM orders immediately?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer18', this)">Show Answer</button></li>
-            <div id="answer18" class="answer">
-            <p><strong>A:</strong> No – it is generated overnight.</p>
-            </div>
-        <li>When should you switch back to Recurring after Generate Now?</strong>
-            <button class="toggle-button" onclick="toggleAnswer('answer19', this)">Show Answer</button></li>
-            <div id="answer19" class="answer">
-            <p><strong>A:</strong> After initial PM work orders are generated (so the definition resumes scheduled recurring generation)</p>
-            </div>
-        </ol>
+        <li>Select the corresponding Model Name value by clicking on the hyperlinked Number.
+        </li>
+        <li>Click Update to save changes to the first Clinical Devices record. Click Proceed Update to confirm the Asset Model Name change.
+          <img src="Lab-Images/Lab 4_Part 1_Step 11.png" alt="Search Correct Model in Asset Model Name Column" style="max-width: 100%;">
+        </li>
+        <li>Repeat steps 5 through 10 for the remaining Clinical Devices.</li>
+        <li>When finished updating all affected Clinical Devices, double-click the Current Model value in the Asset Model Name column search box and press Backspace or Delete.</li>
+        <li>Type the Correct Model value (or copy and paste) from the spreadsheet into the Asset Model Name column search box and press Enter.
+        </li>
+        <li>Ensure the count of results displayed matches the Device Count value from the spreadsheet.</li>
+      </ol>
     </section>
 
   </main>
